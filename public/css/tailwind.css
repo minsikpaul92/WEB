@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+@theme {
+  --default: dim;
+  --color-base-100: #0f172a;
+  --color-base-200: #1e293b;
+  --color-base-300: #334155;
+  --color-primary: #9ab6ff;
+  --color-success: #92f5a1;
+  --color-base-content: #d3d3dd;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.0625rem;
+}
+
+.nav-logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn {
+  font-weight: 700;
+  color: #0f1c40;
+}
+
+.nav-sector-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 41, 55, 0.4);
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-sector-trigger:focus {
+  outline: 2px solid #9ab6ff;
+  outline-offset: 2px;
+}

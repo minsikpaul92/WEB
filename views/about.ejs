@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="min-h-screen bg-base-100 text-base-content">
+    <%- include('partials/navbar') %>
+
+    <main class="mx-auto flex max-w-5xl flex-col gap-12 px-6 py-16">
+      <section class="space-y-4 text-center">
+        <p class="text-sm uppercase tracking-wider text-primary">About</p>
+        <p class="text-base text-base-content/80 md:text-lg">
+          We curate a shared library of proven decarbonization ideas so local
+          governments, businesses, and civic partners can accelerate climate action
+          together.
+        </p>
+      </section>
+
+      <section class="grid gap-10 md:grid-cols-2 md:items-center" style="grid-template-columns: 1fr 1fr;">
+        <div class="overflow-hidden rounded-3xl border border-base-200 bg-white p-4 h-full flex items-center justify-center">
+          <img
+            src="/img/Seneca.png"
+            alt="Seneca college logo"
+            class="h-full w-full object-contain"
+          >
+        </div>
+        <div class="space-y-5 h-full flex flex-col justify-center">
+          <h2 class="text-2xl font-semibold">Our story</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod
+            velit vel mauris bibendum, quis feugiat ipsum viverra. Sed feugiat sapien
+            vel nisi rhoncus, at hendrerit tellus sodales.
+          </p>
+          <p>
+            Vivamus suscipit, mauris vitae convallis consequat, urna arcu efficitur
+            risus, vitae aliquam justo lectus nec mi. Nullam sagittis pretium ex, sed
+            condimentum risus cursus ut.
+          </p>
+          <p>
+            Curabitur et lorem id ligula dictum laoreet. Vestibulum ante ipsum primis
+            in faucibus orci luctus et ultrices posuere cubilia curae.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

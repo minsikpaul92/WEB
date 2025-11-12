@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects • Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="min-h-screen bg-base-100 text-base-content">
+    <%- include('partials/navbar') %>
+
+    <main class="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16">
+      <header class="space-y-3">
+        <p class="text-sm uppercase tracking-wide text-primary">Solutions</p>
+        <h1 class="text-3xl font-semibold">Projects by sector</h1>
+        <% if (sector) { %>
+        <p class="text-base text-base-content/70">
+          Showing projects that match the
+          <span class="font-semibold"><%= sector %></span> sector.
+        </p>
+        <% } else { %>
+        <p class="text-base text-base-content/70">
+          Filter by sector to discover tailored initiatives or browse everything
+          below.
+        </p>
+        <% } %>
+      </header>
+
+      <% if (error) { %>
+      <div class="alert alert-error bg-error/10 text-error">
+        <div>
+          <span><%= error %></span>
+          <% if (validSectors && validSectors.length) { %>
+          <span>
+            Available sectors:
+            <%= validSectors.join(", ") %>
+          </span>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+
+      <% if (projects && projects.length) { %>
+      <div class="overflow-x-auto rounded-2xl border border-base-200 shadow-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Sector</th>
+              <th>Summary</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% projects.forEach((project) => { %>
+            <tr>
+              <td class="font-semibold"><%= project.title %></td>
+              <td>
+                <a
+                  href="/solutions/projects?sector=<%= encodeURIComponent(project.sector) %>"
+                  class="badge badge-outline whitespace-normal break-words hover:bg-base-200"
+                >
+                  <%= project.sector %>
+                </a>
+              </td>
+              <td class="text-sm text-base-content/70">
+                <%= project.summary_short %>
+              </td>
+              <td>
+                <a
+                  href="/solutions/projects/<%= project.id %>"
+                  class="btn btn-sm bg-white text-gray-900"
+                >
+                  View details
+                </a>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <% } else if (!error) { %>
+      <p class="text-base text-base-content/70">
+        No projects to display. Try selecting a different sector.
+      </p>
+      <% } %>
+    </main>
+  </body>
+</html>
