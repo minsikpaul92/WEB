@@ -7,7 +7,7 @@
 * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 *
 * Name: Minsik Kim Student ID: 185751237 Date: Nov 11, 2025
-* Published URL: ________________________________________
+* Published URL: https://web-inky-one-67.vercel.app
 ********************************************************************************/
 
 const express = require("express");
