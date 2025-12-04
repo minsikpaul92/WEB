@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="min-h-screen bg-base-100 text-base-content">
+    <%- include('partials/navbar') %>
+
+    <main class="flex min-h-[70vh] items-center justify-center px-6 py-16">
+        <div class="w-full max-w-md space-y-8 rounded-3xl bg-base-200 p-10 shadow-xl">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold">Sign In</h2>
+                <p class="mt-2 text-sm text-base-content/70">Use your admin credentials to access management features.</p>
+            </div>
+
+            <form class="mt-8 space-y-6" action="/login" method="POST">
+                <div class="form-control w-full">
+                    <label class="label" for="userName">
+                        <span class="label-text font-semibold">User Name</span>
+                    </label>
+                    <input type="text" id="userName" name="userName" value="<%= userName %>" placeholder="User Name" class="input input-bordered w-full" required />
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label" for="password">
+                        <span class="label-text font-semibold">Password</span>
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full">Login</button>
+            </form>
+
+            <% if (errorMessage) { %>
+            <div role="alert" class="alert alert-error mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><%= errorMessage %></span>
+            </div>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

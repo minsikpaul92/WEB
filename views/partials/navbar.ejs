@@ -35,8 +35,25 @@
               Food, Agriculture, and Land Use
             </a>
           </li>
+          <li class="border-t border-gray-500 mt-2 pt-2"><a href="/solutions/projects">View All</a></li>
         </ul>
       </div>
+      <% if (session.user) { %>
+        <div class="dropdown dropdown-end ml-2">
+            <label tabindex="0" class="btn btn-ghost btn-circle btn-sm avatar placeholder">
+              <div class="bg-neutral-focus text-neutral-content rounded-full w-8 h-8">
+                <span class="text-xs"><%= session.user.userName[0].toUpperCase() %></span>
+              </div>
+            </label>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-base-content">
+              <li><a class="pointer-events-none">Signed in as <strong><%= session.user.userName %></strong></a></li>
+              <div class="divider my-0"></div>
+              <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+      <% } else { %>
+        <a href="/login" class="btn btn-sm btn-primary ml-2">Log In</a>
+      <% } %>
     </div>
   </div>
 </nav>

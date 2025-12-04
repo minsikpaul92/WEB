@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 • Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body class="min-h-screen bg-base-200 text-base-content">
+    <%- include('partials/navbar') %>
+
+    <main class="flex min-h-[70vh] items-center justify-center px-6 py-16">
+      <section class="hero w-full max-w-3xl rounded-3xl bg-base-100 p-10 shadow-xl">
+        <div class="hero-content flex-col text-center">
+          <p class="text-sm uppercase tracking-[0.3em] text-primary">Error</p>
+          <h1 class="text-6xl font-black text-error">500</h1>
+          <p class="text-lg text-base-content/80">
+            <%= message || "Something went wrong on our end." %>
+          </p>
+          <div class="mt-6 flex flex-wrap justify-center gap-6">
+            <a href="/" class="btn btn-sm btn-primary text-white">
+              Back to home
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

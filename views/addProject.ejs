@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project • Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="min-h-screen bg-base-100 text-base-content">
+    <%- include('partials/navbar') %>
+
+    <main class="mx-auto max-w-2xl px-6 py-16">
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold">Add Project</h1>
+            <p class="text-base-content/70 mt-2">Contribute a new climate solution to the collection.</p>
+        </header>
+
+        <form action="/solutions/addProject" method="POST" class="space-y-6">
+            <div class="form-control w-full">
+                <label class="label" for="title">
+                    <span class="label-text font-semibold">Title</span>
+                </label>
+                <input type="text" id="title" name="title" placeholder="Project Title" class="input input-bordered w-full" required />
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label" for="feature_img_url">
+                    <span class="label-text font-semibold">Feature Image URL</span>
+                </label>
+                <input type="url" id="feature_img_url" name="feature_img_url" placeholder="https://example.com/image.jpg" class="input input-bordered w-full" required />
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label" for="sector_id">
+                    <span class="label-text font-semibold">Sector</span>
+                </label>
+                <select id="sector_id" name="sector_id" class="select select-bordered w-full" required>
+                    <option value="" disabled selected>Select a Sector</option>
+                    <% sectors.forEach(sector => { %>
+                        <option value="<%= sector.id %>"><%= sector.sector_name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label" for="intro_short">
+                    <span class="label-text font-semibold">Short Introduction</span>
+                </label>
+                <textarea id="intro_short" name="intro_short" class="textarea textarea-bordered h-24" placeholder="A brief overview of the project..." required></textarea>
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label" for="summary_short">
+                    <span class="label-text font-semibold">Summary</span>
+                </label>
+                <textarea id="summary_short" name="summary_short" class="textarea textarea-bordered h-32" placeholder="Detailed summary..." required></textarea>
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label" for="impact">
+                    <span class="label-text font-semibold">Impact</span>
+                </label>
+                <textarea id="impact" name="impact" class="textarea textarea-bordered h-24" placeholder="Environmental impact..." required></textarea>
+            </div>
+
+            <div class="form-control w-full">
+                <label class="label" for="original_source_url">
+                    <span class="label-text font-semibold">Original Source URL</span>
+                </label>
+                <input type="url" id="original_source_url" name="original_source_url" placeholder="https://drawdown.org/..." class="input input-bordered w-full" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full">Add Project</button>
+        </form>
+    </main>
+</body>
+</html>

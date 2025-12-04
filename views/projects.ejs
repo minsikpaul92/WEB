@@ -26,6 +26,14 @@
           Filter by sector to discover tailored initiatives or browse everything
           below.
         </p>
+        <% if (session.user) { %>
+          <a href="/solutions/addProject" class="btn btn-success btn-outline btn-sm mt-4 normal-case">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+            Add New Project
+          </a>
+        <% } %>
         <% } %>
       </header>
 
@@ -59,12 +67,12 @@
             <tr>
               <td class="font-semibold"><%= project.title %></td>
               <td>
-                <a
-                  href="/solutions/projects?sector=<%= encodeURIComponent(project.sector) %>"
-                  class="badge badge-outline whitespace-normal break-words hover:bg-base-200"
-                >
-                  <%= project.sector %>
-                </a>
+                    <a
+                      href="/solutions/projects?sector=<%= encodeURIComponent(project.Sector.sector_name) %>"
+                      class="text-xs uppercase font-bold text-gray-500 hover:text-gray-700"
+                    >
+                      <%= project.Sector.sector_name %>
+                    </a>
               </td>
               <td class="text-sm text-base-content/70">
                 <%= project.summary_short %>
