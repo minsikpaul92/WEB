@@ -85,7 +85,6 @@ projectData
 app.get("/", async (req, res) => {
   try {
     const allProjects = await projectData.getAllProjects();
-    console.log("Fetched projects:", JSON.stringify(allProjects, null, 2)); // Debugging log
     const featuredProjects = allProjects.slice(0, 3);
     res.render("home", { featuredProjects });
   } catch (err) {
@@ -217,7 +216,7 @@ app.post("/login", (req, res) => {
   ) {
     req.session.user = {
       userName: req.body.userName,
-      email: req.body.email, // Note: email is not in form but good for structure
+      email: req.body.email,
       loginDate: new Date(),
     };
     res.redirect("/solutions/projects");
