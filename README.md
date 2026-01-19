@@ -2,7 +2,7 @@
 A robust Full-Stack Project Data Management System built with Node.js and Express. It provides comprehensive CRUD (Create, Read, Update, Delete) functionalities and manages project data efficiently using a PostgreSQL database.
 
 🔗 Live Demo
-Deployment: [Your Vercel Deployment URL Here]
+Deployment: (https://web-inky-one-67.vercel.app)
 
 (Note: Please replace the link above with your actual Vercel project URL)
 
